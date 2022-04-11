@@ -24,4 +24,8 @@ export class HeroeComponent {
     cambiarEdad(nuevaEdad:number){
         this.edad=nuevaEdad;
     };
+
+    nuevaPrueba(){
+        
+    }
 }

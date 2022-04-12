@@ -13,12 +13,15 @@
         </ul> -->
     </div>
     <div class="col">
-        <h3>Agregar {{nuevo.nombre}}</h3>
+        <!-- <app-agregar [personajes]="personajes"></app-agregar> -->
+        <app-agregar 
+        [nuevo]="nuevo" (onNuevoPersonaje)="agregarNuevoPersonaje( $event )"></app-agregar>
+        <!-- <h3>Agregar {{nuevo.nombre}}</h3>
         <hr>
         <form (submit)="agregar()">
             <input placeholder="Nombre del Personaje" type="text" name="nombre" [(ngModel)]="nuevo.nombre">
             <input type="number" placeholder="Poder" name="poder" [(ngModel)]="nuevo.poder">
             <button type="submit">Agregar</button>
-        </form>
+        </form> -->
     </div>
 </div>

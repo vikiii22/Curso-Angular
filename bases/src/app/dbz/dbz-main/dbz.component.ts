@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
 
 @Component({
@@ -6,35 +6,26 @@ import { Personaje } from '../interfaces/dbz.interface';
   templateUrl: './dbz.component.html',
 })
 export class DbzComponent {
-  nuevo:Personaje={
-    nombre:'',
-    poder:0,
-  }
-
-  personajes:Personaje[]=[
+  personajes: Personaje[] = [
     {
-      nombre:'Goku',
-      poder:15000
+      nombre: 'Goku',
+      poder: 15000
     },
     {
-      nombre:'Vegeta',
-      poder:8000
+      nombre: 'Vegeta',
+      poder: 8000
     },
     {
-      nombre:'Krillin',
-      poder:700
+      nombre: 'Krillin',
+      poder: 700
     }
   ];
-  
-  agregar() {
-    if(this.nuevo.nombre==''){
-      return;
-    }
+  nuevo: Personaje = {
+    nombre: '',
+    poder: 0
+  };
 
-    this.personajes.push(this.nuevo);
-    this.nuevo={
-      nombre:'',
-      poder:0
-    }
+  agregarNuevoPersonaje(event:Personaje){
+    this.personajes.push(event);
   }
 }

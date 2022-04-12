@@ -6,5 +6,5 @@ import { Personaje } from '../interfaces/dbz.interface';
   templateUrl: './personajes.component.html',
 })
 export class PersonajesComponent {
-  @Input() personajes:Personaje[]=[]
+  @Input() personajes: Personaje[] = []
 }

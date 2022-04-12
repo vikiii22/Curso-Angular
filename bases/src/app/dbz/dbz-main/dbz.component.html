@@ -15,7 +15,8 @@
     <div class="col">
         <!-- <app-agregar [personajes]="personajes"></app-agregar> -->
         <app-agregar 
-        [nuevo]="nuevo" (onNuevoPersonaje)="agregarNuevoPersonaje( $event )"></app-agregar>
+        [nuevo]="nuevo" 
+        (onNuevoPersonaje)="agregarNuevoPersonaje( $event )"></app-agregar>
         <!-- <h3>Agregar {{nuevo.nombre}}</h3>
         <hr>
         <form (submit)="agregar()">

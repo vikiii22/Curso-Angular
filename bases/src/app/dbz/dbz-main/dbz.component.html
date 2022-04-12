@@ -3,7 +3,7 @@
 
 <div class="row">
     <div class="col">
-        <app-personajes [personajes]="personajes"></app-personajes>
+        <app-personajes></app-personajes>
         <!-- <h3>Personajes</h3>
         <hr>
         <ul>
@@ -14,9 +14,10 @@
     </div>
     <div class="col">
         <!-- <app-agregar [personajes]="personajes"></app-agregar> -->
-        <app-agregar 
-        [nuevo]="nuevo" 
-        (onNuevoPersonaje)="agregarNuevoPersonaje( $event )"></app-agregar>
+        <app-agregar [nuevo]="nuevo">
+        </app-agregar>
+        <!-- (onNuevoPersonaje)="agregarNuevoPersonaje( $event )"> -->
+
         <!-- <h3>Agregar {{nuevo.nombre}}</h3>
         <hr>
         <form (submit)="agregar()">

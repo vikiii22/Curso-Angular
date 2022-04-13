@@ -15,11 +15,12 @@ export class GifsService {
     return [...this._historial];
   }
 
-  constructor(private http: HttpClient) { 
-    // this._historial=localStorage.getItem('historial');
-    if(localStorage.getItem('historial')){
-      this._historial=JSON.parse(localStorage.getItem('historial')!);
-    }
+  constructor(private http: HttpClient) {
+    this._historial = JSON.parse(localStorage.getItem('historial')!) || [];
+    // if(localStorage.getItem('historial')){
+    //   this._historial=JSON.parse(localStorage.getItem('historial')!);
+    // }
+    //this.resultado=JSON.parse(localStorage.getItem('resultados')!)||[];
   }
 
   buscarGif(buscado: string) {
@@ -27,11 +28,11 @@ export class GifsService {
     if (buscado.trim().length == 0) {
       return;
     }
-    if (this._historial.includes(buscado)) {
-      return;
-    }
-    this._historial = this._historial.splice(0, 10);
+    // if (this._historial.includes(buscado)) {
+    //   return;
+    // }
     this._historial.unshift(buscado);
+    this._historial = this._historial.splice(0, 10);
 
     localStorage.setItem('historial', JSON.stringify(this._historial));
 
@@ -39,6 +40,7 @@ export class GifsService {
       .subscribe((resp) => {
         console.log(resp);
         this.resultado = resp.data;
+        localStorage.setItem('resultados', JSON.stringify(this.resultado));
       });
   }
 }

@@ -4,6 +4,7 @@ import { PorCapitalComponent } from './pages/por-capital/por-capital.component';
 import { PorPaisesComponent } from './pages/por-paises/por-paises.component';
 import { PorRegionComponent } from './pages/por-region/por-region.component';
 import { VerPaisComponent } from './pages/ver-pais/ver-pais.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -21,7 +22,8 @@ import { VerPaisComponent } from './pages/ver-pais/ver-pais.component';
     VerPaisComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class PaisesModule { }

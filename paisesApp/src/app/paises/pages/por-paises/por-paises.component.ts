@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PaisService } from '../../services/pais.service';
+import { InterfacePaises } from '../../interfaces/pais.interface';
 
 @Component({
   selector: 'app-por-paises',
@@ -7,13 +9,27 @@ import { Component } from '@angular/core';
   ]
 })
 export class PorPaisesComponent {
+  constructor(private paisService: PaisService) { }
+
   termino: string = '';
+  hayError: boolean = false;
+  paises:InterfacePaises[]=[];
 
   buscar() {
+    this.hayError = false;
     if (this.termino == "") {
       return;
     } else {
       console.log(this.termino);
+      this.paisService.buscarNombre(this.termino)
+        .subscribe((resp) => {
+          // console.log(resp);
+          this.paises=resp;
+          console.log(this.paises);
+        }, (err) => {
+          this.hayError = true;
+          this.paises=[];
+        });
     }
   }
 }

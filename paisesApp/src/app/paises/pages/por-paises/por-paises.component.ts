@@ -15,7 +15,8 @@ export class PorPaisesComponent {
   hayError: boolean = false;
   paises:InterfacePaises[]=[];
 
-  buscar() {
+  buscar(termino:string) {
+    this.termino=termino;
     this.hayError = false;
     if (this.termino == "") {
       return;
@@ -31,5 +32,9 @@ export class PorPaisesComponent {
           this.paises=[];
         });
     }
+  }
+
+  sugerencias(evento:string){
+    this.hayError=false;
   }
 }

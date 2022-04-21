@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { debounceTime, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-pais-input',
@@ -6,14 +7,29 @@ import { Component, Input } from '@angular/core';
   styles: [
   ]
 })
-export class PaisInputComponent {
+export class PaisInputComponent implements OnInit {
 
-  constructor() { }
+  @Output() onEnter: EventEmitter<string> = new EventEmitter();
+  @Output() onDebounce: EventEmitter<string> = new EventEmitter();
 
-  termino:string='';
-  
-  buscar(){
-    
+  debouncer: Subject<string> = new Subject();
+
+  termino: string = '';
+
+  buscar() {
+    this.onEnter.emit(this.termino);
   }
-  
+
+  ngOnInit(): void {
+    this.debouncer
+    .pipe(debounceTime(500))
+    .subscribe( valor=> {
+      console.log(valor);
+    });
+  }
+
+  teclaPresionada(){
+    this.debouncer.next(this.termino);
+  }
+
 }

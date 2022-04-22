@@ -16,4 +16,9 @@ export class PaisService {
     const url = `${this.apiUrl}/name/${nombre}`
     return this.http.get<InterfacePaises[]>(url);
   }
+
+  getPaisPorCodigo(id:string):Observable<InterfacePaises>{
+    const url=`${this.apiUrl}/alpha/${id}`;
+    return this.http.get<InterfacePaises>(url);
+  }
 }

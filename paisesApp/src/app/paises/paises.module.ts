@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { PaisTablaComponent } from './components/pais-tabla/pais-tabla.component';
 import { PaisInputComponent } from './components/pais-input/pais-input.component';
 import { CapitalTablaComponent } from './components/capital-tabla/capital-tabla.component';
+import { RegionTablaComponent } from './components/region-tabla/region-tabla.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { CapitalTablaComponent } from './components/capital-tabla/capital-tabla.
     PaisTablaComponent,
     PaisInputComponent,
     CapitalTablaComponent,
+    RegionTablaComponent,
   ],
   exports: [
     PorCapitalComponent,

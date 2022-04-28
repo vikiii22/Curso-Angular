@@ -7,9 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pipesAPP';
-  nombre:string="jose"
+  nombre:string="jose antonio"
+  nombreSolo:string='';
 
   cambiarNombre(n:string){
     console.log(n);
+    this.nombreSolo=this.nombre.slice(0, 4);
   }
 }

@@ -5,6 +5,8 @@ import { BasicosComponent } from './ventas/pages/basicos/basicos.component';
 import { NoComunesComponent } from './ventas/pages/no-comunes/no-comunes.component';
 import { NumerosComponent } from './ventas/pages/numeros/numeros.component';
 import { OrdenarComponent } from './ventas/pages/ordenar/ordenar.component';
+import { MayusculasPipe } from './ventas/pipes/mayusculas.pipe';
+import { MayusculasComponent } from './ventas/pages/mayusculas/mayusculas.component';
 
 
 const routes:Routes=[
@@ -24,6 +26,10 @@ const routes:Routes=[
   {
     path:'ordenar',
     component:OrdenarComponent
+  },
+  {
+    path: 'mayusculas',
+    component:MayusculasComponent
   },
   {
     path:'**',

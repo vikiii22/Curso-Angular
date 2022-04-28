@@ -6,22 +6,28 @@ import { Component } from '@angular/core';
   styles: [
   ]
 })
-export class NoComunesComponent{
+
+export class NoComunesComponent {
 
   constructor() { }
 
-  nombre:string='Jose';
-  genero:string='Hombre';
-  invitacion={
-    'Hombre':'tenerlo',
+  nombre: string = 'Jose';
+  genero: string = 'Hombre';
+  invitacion = {
+    'Hombre': 'tenerlo',
     'Mujer': 'tenerla'
   };
 
-  clientes:string[]=['Jopse', 'Pedro', 'María'];
-  clienteMap={
-    '=0':'No hay nadie',
-    '=1':'1 Cliente',
-    'other':'# Clientes'
+  clientes: string[] = ['Jopse', 'Pedro', 'María'];
+  clienteMap = {
+    '=0': 'No hay nadie',
+    '=1': '1 Cliente',
+    'other': '# Clientes'
   };
 
+  personajo = {
+    direccion: 'Aspe',
+    edad: '20',
+    nombre: 'Jose'
+  }
 }

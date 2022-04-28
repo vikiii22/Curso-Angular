@@ -1,1 +1,44 @@
-<p>basicos works!</p>
+<div class="text-layout">
+    <h1>Pipes Básicos</h1>
+    <p>Pipes incluidos en Angular</p>
+</div>
+
+<div class="grid">
+    <div class="col-4">
+        <p-card header="UpperCase">
+            {{'texto' | uppercase}}
+        </p-card>
+    </div>
+    <div class="col-4">
+        <p-card header="LowerCase">
+            {{'TEXTO' | lowercase}}
+        </p-card>
+    </div>
+    <div class="col-4">
+        <p-card header="TitleCase">
+            {{'texto de prueba' | titlecase}}
+        </p-card>
+    </div>
+</div>
+
+<div class="text-layout">
+    <h1>Date | Fecha | Pipe</h1>
+    <p>Pipes para mostar fechas</p>
+</div>
+
+<div class="grid">
+    <div class="col-6">
+        <p-card>
+            <ul>
+                <li>Fecha</li>
+            </ul>
+        </p-card>
+    </div>
+    <div class="col-6">
+        <p-card>
+            <ul>
+                <li>{{fecha | date:'dd-MM-yyyy -_- hh:mm'}}</li>
+            </ul>
+        </p-card>
+    </div>
+</div>

@@ -9,7 +9,7 @@ import { ListadoComponent } from './pages/listado/listado.component';
 const routes: Routes = [
   {
     path: '',
-    component:HeroeComponent,
+    component:HeroesHomeComponent,
     children: [
       {
         path: 'agregar',
@@ -33,7 +33,7 @@ const routes: Routes = [
       },
       {
         path: '**',
-        redirectTo: 'agregar'
+        redirectTo: 'heroe-home'
       }
     ]
   }

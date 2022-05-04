@@ -10,11 +10,11 @@
             </button>
         </mat-toolbar>
         <mat-list>
-            <a routerLink="./listado" mat-list-item (click)="sidenav.toggle()">
+            <a [routerLink]="['./listado']" mat-list-item (click)="sidenav.toggle()">
                 <mat-icon mat-list-icon>label</mat-icon>
                 <span>Listado de Héroes</span>
             </a>
-            <a routerLink="./agregar" mat-list-item (click)="sidenav.toggle()">
+            <a [routerLink]="['./agregar']" mat-list-item (click)="sidenav.toggle()">
                 <mat-icon mat-list-icon>add</mat-icon>
                 <span>Agregar</span>
             </a>

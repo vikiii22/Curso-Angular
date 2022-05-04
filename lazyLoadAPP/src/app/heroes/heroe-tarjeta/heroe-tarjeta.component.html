@@ -10,8 +10,14 @@
                 <p><b>Primera Aparación</b> {{heroe.first_appearance}} <br> <b>Personaje: </b>{{heroe.characters}}</p>
             </mat-card-content>
             <mat-card-actions>
-                <button mat-button color="warn">Leer más</button>
-                <button mat-button color="info">Editar</button>
+                <button mat-button color="warn"
+                    [routerLink]="['/heroe/heroe', heroe.id]">
+                    Leer más
+                </button>
+                <button mat-button color="info"
+                    [routerLink]="['/heroe/agregar', heroe.id]">
+                    Editar
+                </button>
             </mat-card-actions>
         </mat-card>
     </div>

@@ -17,4 +17,8 @@ export class HeroesService {
   getHeroeId( id:string ){
     return this.http.get<InterfaceHeroe>('http://localhost:3000/heroes/'+id)
   }
+
+  getSugerencias( termino:string ){
+    return this.http.get<InterfaceHeroe[]>('http://localhost:3000/heroes?q='+termino+'&_limit=3');
+  }
 }

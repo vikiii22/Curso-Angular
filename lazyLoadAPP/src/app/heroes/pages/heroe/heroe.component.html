@@ -6,5 +6,22 @@
 
 
 <ng-template #divHeroe>
-    {{heroe | json}}
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="30px">
+        <div fxFlex="50">
+            <h1>{{heroe.superhero}} <small>{{heroe.alter_ego}}</small></h1>
+            <br>
+            <img [src]="heroe | imagen">
+        </div>
+        <div fxFlex="50">
+            <h1>{{heroe.publisher}}</h1>
+            <mat-divider></mat-divider>
+            <mat-list>
+                <mat-list-item><b>Primera aparación:&nbsp;</b>{{ heroe.first_appearance }}</mat-list-item>
+                <mat-list-item><b>Personaje:&nbsp;</b>{{ heroe.characters }}</mat-list-item>
+                <mat-list-item><b>Pertenece a:&nbsp;</b>{{ heroe.publisher }}</mat-list-item>
+            </mat-list>
+            <br>
+            <button mat-button color="warn" [routerLink]="['/heroe/listado']">Volver a la lista</button>
+        </div>
+    </div>
 </ng-template>

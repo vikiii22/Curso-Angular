@@ -7,7 +7,15 @@ import { switchMap } from 'rxjs';
 @Component({
   selector: 'app-heroe',
   templateUrl: './heroe.component.html',
-  styles: [
+  styles: [`
+    img{
+      border-radius:10px;
+    }
+
+    small{
+      color:gray;
+    }
+  `
   ]
 })
 export class HeroeComponent implements OnInit {

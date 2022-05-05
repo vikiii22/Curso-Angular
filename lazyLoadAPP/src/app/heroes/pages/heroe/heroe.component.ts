@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { InterfaceHeroe } from '../../interfaces/heroes.interface';
+import { HeroesService } from '../../services/heroes.service';
+import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-heroe',
@@ -9,10 +12,19 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HeroeComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  idGuardado: string = '';
+  heroe!: InterfaceHeroe;
+
+  constructor(private activatedRoute: ActivatedRoute, private heroeService: HeroesService) { }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(({ id }) => console.log(id))
+    this.activatedRoute.params
+      .pipe(
+        switchMap(({ id }) => this.heroeService.getHeroeId(id))
+      )
+      .subscribe(heroe => {
+        this.heroe = heroe;
+      });
   }
 
 }

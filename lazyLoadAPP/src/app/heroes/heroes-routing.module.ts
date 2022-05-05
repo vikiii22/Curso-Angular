@@ -20,16 +20,16 @@ const routes: Routes = [
         component: BuscarComponent
       },
       {
-        path: 'heroe/:id',
-        component: HeroeComponent
-      },
-      {
         path: 'heroe-home',
         component: HeroesHomeComponent
       },
       {
         path: 'listado',
         component: ListadoComponent
+      },
+      {
+        path: ':id',
+        component: HeroeComponent
       },
       {
         path: '**',

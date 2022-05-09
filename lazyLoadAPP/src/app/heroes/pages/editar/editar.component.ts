@@ -72,7 +72,7 @@ export class EditarComponent implements OnInit {
     this.heroesService.eliminarHeroe(this.heroe)
       .subscribe( resp => {
         console.log(resp);
-        this.router.navigate(['/heroes']);
+        this.router.navigate(['heroe/listado']);
       })
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HeroesService } from '../../services/heroes.service';
 
 @Component({
@@ -13,9 +14,13 @@ import { HeroesService } from '../../services/heroes.service';
 })
 export class HeroesHomeComponent implements OnInit {
 
-  constructor( ) { }
+  constructor( private router:Router ) { }
 
   ngOnInit(): void {
     
+  }
+
+  logout(){
+    this.router.navigate([('auth/login')])
   }
 }

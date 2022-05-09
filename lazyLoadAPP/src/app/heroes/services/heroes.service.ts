@@ -21,4 +21,16 @@ export class HeroesService {
   getSugerencias( termino:string ){
     return this.http.get<InterfaceHeroe[]>('http://localhost:3000/heroes?q='+termino+'&_limit=3');
   }
+
+  setNuevoHeroe( heroe:InterfaceHeroe){
+    return this.http.post<InterfaceHeroe>('http://localhost:3000/heroes', heroe);
+  }
+
+  actualizarHeroe( heroe:InterfaceHeroe ){
+    return this.http.put<InterfaceHeroe>(`http://localhost:3000/heroes/${heroe.id}`, heroe)
+  }
+
+  eliminarHeroe( heroe:InterfaceHeroe ){
+    return this.http.delete<InterfaceHeroe>(`http://localhost:3000/heroes/${heroe.id}`);
+  }
 }

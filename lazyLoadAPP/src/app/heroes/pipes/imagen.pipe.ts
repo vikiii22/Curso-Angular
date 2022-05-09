@@ -14,6 +14,7 @@ export class ImagenPipe implements PipeTransform {
     //   imagen='assets/no-image.jpg'
     // }
     heroe.id!=null ? imagen='assets/heroes/'+heroe.id+'.jpg' : imagen='assets/no-image.png';
+    heroe.alt_img ? imagen=heroe.alt_img : '';
     return heroe.alt_img=imagen;
   }
 

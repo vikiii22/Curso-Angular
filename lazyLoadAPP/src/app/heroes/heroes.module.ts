@@ -11,6 +11,7 @@ import { MaterialModule } from '../material/material.module';
 import { HeroeTarjetaComponent } from './heroe-tarjeta/heroe-tarjeta.component';
 import { ImagenPipe } from './pipes/imagen.pipe';
 import { FormsModule } from '@angular/forms';
+import { EditarComponent } from './pages/editar/editar.component';
 
 
 
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     HeroesHomeComponent,
     ListadoComponent,
     HeroeTarjetaComponent,
-    ImagenPipe
+    ImagenPipe,
+    EditarComponent
   ],
   imports: [
     CommonModule,

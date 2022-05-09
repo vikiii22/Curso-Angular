@@ -168,11 +168,13 @@
       "characters": "Norrin Radd"
     },
     {
-      "superhero": "Spider-Man",
-      "publisher": "Marvel Comics",
-      "alter_ego": "Jose Sánchez",
-      "first_appearance": "Huerto's Clan #48",
-      "characters": "Norrin Radd"
+      "superhero": "Moon-Knight",
+      "id": "moon-knight",
+      "alt_img": "https://lumiere-a.akamaihd.net/v1/images/moon_knight_full_poster_a1af18d1.png",
+      "alter_ego": "Mark, Steven, Joe",
+      "first_appearance": "#51 Spider-Man contraataca",
+      "characters": "Mark Spector, Steven Grant ¿?",
+      "publisher": "Marvel Comics"
     }
   ]
 }

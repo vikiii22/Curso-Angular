@@ -3,6 +3,7 @@ import { InterfaceHeroe, Publisher } from '../../interfaces/heroes.interface';
 import { HeroesService } from '../../services/heroes.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 interface Creador{
   id:string
@@ -15,7 +16,7 @@ interface Creador{
   styles: [`
     img{
       border-radius: 10px;
-      width:100%;
+      width:50%;
     }
   `
   ]
@@ -42,7 +43,7 @@ export class EditarComponent implements OnInit {
     alt_img:''
   };
 
-  constructor( private heroesService:HeroesService, private activatedRoute:ActivatedRoute, private router:Router) { }
+  constructor( private heroesService:HeroesService, private activatedRoute:ActivatedRoute, private router:Router, private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.activatedRoute.params
@@ -52,11 +53,18 @@ export class EditarComponent implements OnInit {
       .subscribe(heroe => this.heroe=heroe);
   }
 
+  abrirSnackBar ( mensaje:string ){
+    this.snackBar.open(mensaje, 'OK!', {
+      duration: 2500
+    });
+  }
+
   actualizar(){
     if(this.heroe.superhero.trim().length === 0) return;
     this.heroesService.actualizarHeroe(this.heroe)
       .subscribe( resp=> {
         console.log(resp);
+        this.abrirSnackBar( `${this.heroe.superhero} ha sido editado con éxito` );
       })
   }
 

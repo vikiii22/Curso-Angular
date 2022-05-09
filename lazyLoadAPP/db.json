@@ -37,7 +37,8 @@
       "publisher": "DC Comics",
       "alter_ego": "Alan Scott",
       "first_appearance": "All-American Comics #16",
-      "characters": "Alan Scott, Hal Jordan, Guy Gardner, John Stewart, Kyle Raynor, Jade, Sinestro, Simon Baz"
+      "characters": "Alan Scott, Hal Jordan, Guy Gardner, John Stewart, Kyle Raynor, Jade, Sinestro, Simon Baz",
+      "alt_img": "assets/heroes/dc-green.jpg"
     },
     {
       "id": "dc-arrow",
@@ -93,7 +94,8 @@
       "publisher": "Marvel Comics",
       "alter_ego": "Peter Parker",
       "first_appearance": "Amazing Fantasy #15",
-      "characters": "Peter Parker"
+      "characters": "Peter Parker",
+      "alt_img": "https://static.posters.cz/image/750/pinturas-sobre-lienzo-spiderman-web-sling-i80242.jpg"
     },
     {
       "id": "marvel-captain",
@@ -175,6 +177,24 @@
       "first_appearance": "#51 Spider-Man contraataca",
       "characters": "Mark Spector, Steven Grant ¿?",
       "publisher": "Marvel Comics"
+    },
+    {
+      "superhero": "DeadPool",
+      "alter_ego": "Wade Wilson",
+      "characters": "Wadw",
+      "first_appearance": "#51 Spider-Man contraataca",
+      "publisher": "DC Comics",
+      "alt_img": "https://pm1.narvii.com/6869/df0917b0b4874716501cff9f3582f7da9e10efdcr1-980-1383v2_hq.jpg",
+      "id": "NiVkcwn"
+    },
+    {
+      "superhero": "She Hulk",
+      "alter_ego": "Jennifer Walters",
+      "characters": "Jennifer Walters",
+      "first_appearance": "#1 de Savage She Hulk",
+      "publisher": "Marvel Comics",
+      "alt_img": "https://images-na.ssl-images-amazon.com/images/I/91XQ3bkT5QS.jpg",
+      "id": "Q0OrAMo"
     }
   ]
 }

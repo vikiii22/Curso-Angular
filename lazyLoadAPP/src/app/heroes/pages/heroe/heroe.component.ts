@@ -10,6 +10,7 @@ import { switchMap } from 'rxjs';
   styles: [`
     img{
       border-radius:10px;
+      width: 50%;
     }
 
     small{

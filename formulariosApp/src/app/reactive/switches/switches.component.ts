@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-sidemenu',
-  templateUrl: './sidemenu.component.html',
+  selector: 'app-switches',
+  templateUrl: './switches.component.html',
   styles: [
   ]
 })
-export class SidemenuComponent implements OnInit {
+export class SwitchesComponent implements OnInit {
 
   constructor() { }
 

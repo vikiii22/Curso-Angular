@@ -13,6 +13,10 @@ export class AuthService {
     return this.http.get<InterfaceUsuario>(`http://localhost:3000/usuarios/${id}`);
   }
 
+  getUsuarioId( usuario:InterfaceUsuario ){
+    return this.http.get<InterfaceUsuario>(`http://localhost:3000/usuarios/${ usuario.id }`);
+  }
+
   registrarUsuario (usuario:InterfaceUsuario){
     return this.http.post<InterfaceUsuario>(`http://localhost:3000/usuarios`, usuario);
   }

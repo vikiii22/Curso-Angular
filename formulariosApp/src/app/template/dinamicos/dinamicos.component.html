@@ -4,7 +4,7 @@
     <div class="mb-3 row">
         <label class="col-sm-3 col-form-label">Nombre</label>
         <div class="col-sm-9">
-            <input class="form-control" placeholder="Nombre persona" ngModel required name="nombre">
+            <input class="form-control" placeholder="Nombre persona" [ngModel]="persona.nombre" required name="nombre">
             <span class="form-text text-danger"
                 *ngIf="miFormulario.controls['nombre'].value.length <= 1 && miFormulario.controls['nombre'].touched">Este
                 campo es obligatorio*</span>
@@ -14,8 +14,18 @@
         <label class="col-sm-3 col-form-label">Agregar</label>
         <div class="col-sm-9">
             <div class="input-group">
-                <input class="form-control" placeholder="Agregar favorito">
-                <button class="btn btn-outline-primary">Agregar</button>
+                <input class="form-control" placeholder="Agregar favorito" [(ngModel)]="nuevoJuego" name="nuevo">
+                <button class="btn btn-outline-primary" (click)="agregar()">Agregar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-sm-3 col-form-label">Favoritos</label>
+        <div class="col-sm-9">
+            <div class="input-group" *ngFor="let juego of persona.favoritos; let i=index">
+                <input class="form-control mb-1" [name]="juego.id + 'i'" [(ngModel)]="juego.nombre" required (keyup.enter)="agregar()">
+                <button class="btn btn-outline-danger mb-1" (click)="eliminar(i)">Eliminar</button>
             </div>
         </div>
     </div>
@@ -27,3 +37,5 @@
         </div>
     </div>
 </form>
+<span>Juegos</span>
+<pre>{{ persona | json }}</pre>

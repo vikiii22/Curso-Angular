@@ -15,15 +15,25 @@ export class BasicosComponent {
   //   existencias: new FormControl(100)
   // });
 
-  constructor( private formBuilder:FormBuilder ) { }
+  constructor(private formBuilder: FormBuilder) { }
 
-  miFormulario:FormGroup=this.formBuilder.group({
-    nombre:[ , [Validators.required, Validators.minLength(3)]],
-    precio:[ , [Validators.required, Validators.min(0)]],
-    existencias:[ , [Validators.required, Validators.min(0)]]
+  miFormulario: FormGroup = this.formBuilder.group({
+    nombre: [, [Validators.required, Validators.minLength(3)]],
+    precio: [, [Validators.required, Validators.min(0)]],
+    existencias: [, [Validators.required, Validators.min(0)]]
   });
 
-  campoValido( campo:string ):boolean | null{
+  campoValido(campo: string): boolean | null {
     return this.miFormulario.controls[campo].errors && this.miFormulario.controls[campo].touched;
+  };
+
+  guardar() {
+    if (this.miFormulario.invalid) {
+      this.miFormulario.markAllAsTouched();
+      return;
+    } else {
+      console.log(this.miFormulario.value);
+      this.miFormulario.reset();
+    }
   }
 }

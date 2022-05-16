@@ -12,18 +12,18 @@
         <label class="col-sm-3 col-form-label">Agregar</label>
         <div class="col-sm-9">
             <div class="input-group">
-                <input class="form-control" placeholder="Agregar favorito" name="nuevo">
-                <button class="btn btn-outline-primary">Agregar</button>
+                <input class="form-control" placeholder="Agregar favorito" [formControl]="nuevo" name="nuevo">
+                <button class="btn btn-outline-primary" (click)="agregar()">Agregar</button>
             </div>
         </div>
     </div>
 
     <div class="mb-3 row">
         <label class="col-sm-3 col-form-label">Favoritos</label>
-        <div class="col-sm-9">
-            <div class="input-group">
-                <input class="form-control mb-1" required>
-                <button class="btn btn-outline-danger mb-1">Eliminar</button>
+        <div class="col-sm-9" formArrayName="favoritos">
+            <div class="input-group" *ngFor="let fav of getFavoritos.controls; let i=index">
+                <input class="form-control mb-1" [formControlName]="i">
+                <button class="btn btn-outline-danger mb-1" (click)="eliminar(i)">Eliminar</button>
             </div>
         </div>
     </div>
